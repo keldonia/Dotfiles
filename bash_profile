@@ -2,7 +2,7 @@ export PATH=/Users/brianlambert/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbi
 eval "$(rbenv init -)"
 
   ```
-    export PATH="$HOME/.rbenv/bin:$PATH"
+    exportp PATH="$HOME/.rbenv/bin:$PATH"
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
   ```
@@ -12,6 +12,7 @@ git config --global alias.lg "${PRETTY_LOG}"
 
 ###############################################################################
 # Bash
+
 PS1=' $PWD
 ==> '
 export CLICOLOR='yes'
@@ -34,6 +35,13 @@ alias cx='chmod u+x'
 alias profile='atom ~/.bash_profile'
 alias c="clear"
 alias mkr='mkdir'
+alias uz="unzip"
+alias zip="zip -r"
+alias die="kill_process"
+alias diehard="really_kill_process"
+alias sb="subl ."
+alias at="atom ."
+
 mkcd () { mkdir -p "$@" && cd "$_"; }
 md () { mkdir -p "$@" && cd "$_"; }
 h () { history | grep "$@"; }
@@ -42,58 +50,79 @@ ch() {
   history | awk '{ count[$2]++ } END { for (cmd in count) { print count[cmd] " " cmd } }' | sort -rn | head -20
 }
 
+uzcd () { unzip "$@" && cd "$_"; }
+
 ###############################################################################
-# Bash - jumps
+# Ruby
+
+alias bi="bundle install"
+alias bu="bundle update"
+alias be="bundle exec"
+alias bers="be rspec spec"
+bers/() { bundle exec rspec spec/"$_"; }
+alias rb="ruby"
+alias p="pry"
+
+###############################################################################
+# Bash - Jumps
+
 alias dk="cd ~/desktop"
 alias gd="cd ~/downloads"
 alias gdp="cd ~/dropbox"
 alias ggd="cd Google\ Drive/"
 alias aa="cd ~/dropbox/appacademy"
 alias aaa="cd ~/dropbox/appacademy/assessments/assessment-prep-master"
-alias sb="subl ."
-alias at="atom ."
-alias die="kill_process"
-alias diehard="really_kill_process"
-
+alias dotfile="cd ~/dropbox/dotfiles"
 
 ###############################################################################
 # Bash - Stupid Shit
+
 alias telnetstarwars="telnet towel.blinkenlights.nl"
 
 ###############################################################################
 # Git
+
 alias g="git"
 alias gti="git"
-alias g a="git add"
+
+alias gi="git init"
+
+alias ga="git add"
 alias gaa="git add -A"
-alias d="git diff"
+
 alias ds="git diff --staged"
-alias s="git status"
-alias gpu="git push -u origin master"
-alias gc="git commit -m"
 alias gs="git status"
-alias dl="git log"
+alias gl="git log"
+
 alias gcam="git commit -am"
+alias gcm="git commit -m"
+
+alias gp="git push -u origin master"
+
 alias gitpp='git pull && git push'
 alias gitppr="git pull --rebase && git push"
+
 alias gclean="git clean -df"
 alias clean="gclean"
+
 alias gph="git push heroku master"
 
 ###############################################################################
 #Rails
 
- alias bi="bundle install"
- alias bu="bundle update"
- alias be="bundle exec"
- alias bers="be rspec spec"
  alias rs="rails s"
+ alias rc="rails c"
+
  alias rdbm='bundle exec rake db:migrate'
  alias rake="buddle exec rake"
- alias rm="rails c"
+ alias rgm="rails generate migration"
+ alias rn="rails new"
 
-
-
+ alias rdr="rake db:reset"
+ alias rdm="rails db:migrate"
+ alias rdset="rails db:setup"
+ alias rdsee="rails db:seed"
+ alias rdc="rails db:console"
 
  ###############################################################################
  #PostgresSQL
