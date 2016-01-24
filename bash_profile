@@ -29,6 +29,7 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias ...='cd ../..'
 alias -- -="cd -"
+
 alias reload=".~/.bash_profile"
 alias r='reload'
 alias cx='chmod u+x'
@@ -37,8 +38,10 @@ alias c="clear"
 alias mkr='mkdir'
 alias uz="unzip"
 alias zip="zip -r"
+
 alias die="kill_process"
 alias diehard="really_kill_process"
+
 alias sb="subl ."
 alias at="atom ."
 
@@ -55,13 +58,15 @@ uzcd () { unzip "$@" && cd "$_"; }
 ###############################################################################
 # Ruby
 
+alias rb="ruby"
+alias p="pry"
+
 alias bi="bundle install"
 alias bu="bundle update"
 alias be="bundle exec"
 alias bers="be rspec spec"
+
 bers/() { bundle exec rspec spec/"$_"; }
-alias rb="ruby"
-alias p="pry"
 
 ###############################################################################
 # Bash - Jumps
@@ -72,7 +77,7 @@ alias gdp="cd ~/dropbox"
 alias ggd="cd Google\ Drive/"
 alias aa="cd ~/dropbox/appacademy"
 alias aaa="cd ~/dropbox/appacademy/assessments/assessment-prep-master"
-alias dotfile="cd ~/dropbox/dotfiles"
+alias dotfiles="cd ~/dropbox/dotfiles"
 
 ###############################################################################
 # Bash - Stupid Shit
@@ -90,7 +95,7 @@ alias gi="git init"
 alias ga="git add"
 alias gaa="git add -A"
 
-alias ds="git diff --staged"
+alias gds="git diff --staged"
 alias gs="git status"
 alias gl="git log"
 
@@ -110,19 +115,19 @@ alias gph="git push heroku master"
 ###############################################################################
 #Rails
 
- alias rs="rails s"
+
  alias rc="rails c"
-
- alias rdbm='bundle exec rake db:migrate'
- alias rake="buddle exec rake"
- alias rgm="rails generate migration"
  alias rn="rails new"
+ alias rs="rails s"
 
- alias rdr="rake db:reset"
- alias rdm="rails db:migrate"
- alias rdset="rails db:setup"
- alias rdsee="rails db:seed"
- alias rdc="rails db:console"
+ alias rgm="rails generate migration"
+ alias rake="buddle exec rake"
+
+ alias rdbc="rails db:console"
+ alias rdbm='bundle exec rake db:migrate'
+ alias rdbr="rake db:reset"
+ alias rdbsee="rails db:seed"
+ alias rdbset="rails db:setup"
 
  ###############################################################################
  #PostgresSQL
