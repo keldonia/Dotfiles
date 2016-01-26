@@ -47,13 +47,12 @@ alias at="atom ."
 
 mkcd () { mkdir -p "$@" && cd "$_"; }
 md () { mkdir -p "$@" && cd "$_"; }
+uzcd () { unzip "$@" && cd "$_"; }
 h () { history | grep "$@"; }
 
 ch() {
   history | awk '{ count[$2]++ } END { for (cmd in count) { print count[cmd] " " cmd } }' | sort -rn | head -20
 }
-
-uzcd () { unzip "$@" && cd "$_"; }
 
 ###############################################################################
 # Ruby
@@ -91,18 +90,17 @@ alias g="git"
 alias gti="git"
 
 alias gi="git init"
-
 alias ga="git add"
 alias gaa="git add -A"
-
-alias gds="git diff --staged"
 alias gs="git status"
+alias gds="git diff --staged"
 alias gl="git log"
-
-alias gcam="git commit -am"
 alias gcm="git commit -m"
-
+alias gcam="git commit -am"
 alias gp="git push -u origin master"
+alias gacan="git add -A && git commit --ammend --no-edit"
+
+gac() { git add -A && git commit -m "$@"; }
 
 alias gitpp='git pull && git push'
 alias gitppr="git pull --rebase && git push"
@@ -114,7 +112,6 @@ alias gph="git push heroku master"
 
 ###############################################################################
 #Rails
-
 
  alias rc="rails c"
  alias rn="rails new"
