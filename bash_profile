@@ -2,7 +2,7 @@ export PATH=/Users/brianlambert/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbi
 eval "$(rbenv init -)"
 
   ```
-    exportp PATH="$HOME/.rbenv/bin:$PATH"
+    export PATH="$HOME/.rbenv/bin:$PATH"
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
   ```
@@ -109,6 +109,11 @@ alias gclean="git clean -df"
 alias clean="gclean"
 
 alias gph="git push heroku master"
+
+alias gback="git log -n 1 --pretty='%H' > ../repo_backup.txt"
+alias grename="git filter-branch -f --env-filter "GIT_AUTHOR_NAME='keldonia'; GIT_AUTHOR_EMAIL='keldoniaskylar@gmail.com'; GIT_COMMITER_NAME='keldonia'; GIT_COMMITTER_EMAIL='keldonia@gmail.com';""
+
+alias gbdel="rm -R ../repo_backup.txt"
 
 ###############################################################################
 #Rails
