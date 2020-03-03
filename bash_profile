@@ -99,6 +99,11 @@ alias gcm="git commit -m"
 alias gcam="git commit -am"
 alias gp="git push -u origin master"
 alias gacan="git add -A && git commit --ammend --no-edit"
+alias gacm="git add -A && git commit -m"
+alias gpull="git pull origin"
+alias gpush="git push -u origin"
+alias gco="git checkout"
+alias gitpp='git pull && git push'
 
 gac() { git add -A && git commit -m "$@"; }
 
