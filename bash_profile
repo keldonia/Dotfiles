@@ -74,8 +74,7 @@ alias dk="cd ~/desktop"
 alias gd="cd ~/downloads"
 alias gdp="cd ~/dropbox"
 alias ggd="cd Google\ Drive/"
-alias aa="cd ~/dropbox/appacademy"
-alias aaa="cd ~/dropbox/appacademy/assessments/assessment-prep-master"
+alias strtst="cd ~/Test"
 alias dotfiles="cd ~/dropbox/dotfiles"
 
 ###############################################################################
@@ -140,3 +139,14 @@ alias gbdel="rm -R ../repo_backup.txt"
  #PostgresSQL
 
  PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/brianlambert/Documents/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/brianlambert/Documents/google-cloud-sdk/completion.bash.inc'
